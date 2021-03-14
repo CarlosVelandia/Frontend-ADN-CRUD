@@ -19,6 +19,10 @@ export class ListarComponent implements OnInit {
         this.personas = data;
       });
   }
+
+  Nuevo(){
+    this.router.navigate(["add"]);
+  }
   Editar(persona:Persona){
     //localStorage.setItem("id",persona.id.toString());
     this.service.persona = persona;
