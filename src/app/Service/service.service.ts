@@ -5,6 +5,7 @@ import { Persona } from '../Modelo/Persona';
 @Injectable()
 export class ServiceService {
 
+  persona: Persona;
 
   constructor(private http:HttpClient) { }
 
