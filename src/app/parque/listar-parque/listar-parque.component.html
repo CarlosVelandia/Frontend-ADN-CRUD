@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="card row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <h3>Parques</h3>
+          <button (click)="nuevoParque()" class="btn btn-primary btn-sm">Crear Parque</button>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <table class="table table-hover">
+        <thead>
+          <tr class="text-center">
+            <th>ID</th>
+            <th>NOMBRE</th>
+            <th>CODIGO</th>
+            <th>DIRECCION</th>
+            <th>TELEFONO</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let parque of parques" class="text-center">
+            <td>{{parque.id}}</td>
+            <td>{{parque.nombre}}</td>
+            <td>{{parque.codigo}}</td>
+            <td>{{parque.direccion}}</td>
+            <td>{{parque.telefono}}</td>
+            <td>
+              <button (click)="editarParque(parque)" class="btn btn-warning">Editar</button>
+              <button (click)="deleteParque(parque)" class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

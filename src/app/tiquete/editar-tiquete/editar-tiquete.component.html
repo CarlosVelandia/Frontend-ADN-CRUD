@@ -1,0 +1,24 @@
+<div class="container col-md-6">
+  <div class="card">
+    <div class="card-header">
+      <h3>Modificar Tiquete</h3>
+    </div>
+    <div class="card-body">
+      <form action="">
+        <div class="form-group">
+          <label for="">ID Usuario:</label>
+          <input [(ngModel)]="tiquete.idUsuario" name="idUsuario" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">ID Tiquete:</label>
+          <input [(ngModel)]="tiquete.idParque" name="idParque" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Fecha de compra:</label>
+          <input [(ngModel)]="tiquete.fechaCompra" name="fechaCompra" type="text" class="form-control">
+        </div>
+        <button (click)="actualizarTiquete(tiquete)" class="btn btn-danger">Actualizar</button>
+      </form>
+    </div>
+  </div>
+</div>

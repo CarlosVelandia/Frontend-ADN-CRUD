@@ -1,0 +1,28 @@
+<div class="container col-md-6">
+  <div class="card">
+    <div class="card-header">
+      <h3>Modificar Parque</h3>
+    </div>
+    <div class="card-body">
+      <form action="">
+        <div class="form-group">
+          <label for="">Nombre:</label>
+          <input [(ngModel)]="parque.nombre" name="nombre" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Codigo:</label>
+          <input [(ngModel)]="parque.codigo" name="codigo" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Direccion:</label>
+          <input [(ngModel)]="parque.direccion" name="direccion" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Telefono:</label>
+          <input [(ngModel)]="parque.telefono" name="telefono" type="text" class="form-control">
+        </div>
+        <button (click)="actualizarParque(persona)" class="btn btn-danger">Actualizar</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="card row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <h3>Tiquetes</h3>
+          <button (click)="nuevoTiquete()" class="btn btn-primary btn-sm">Crear Tiquete</button>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <table class="table table-hover">
+        <thead>
+          <tr class="text-center">
+            <th>ID</th>
+            <th>ID USUARIO</th>
+            <th>ID TIQUETE</th>
+            <th>FECHA COMPRA</th>
+            <th>VALOR</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tiquete of tiquetes" class="text-center">
+            <td>{{tiquete.id}}</td>
+            <td>{{tiquete.idUsuario}}</td>
+            <td>{{tiquete.idParque}}</td>
+            <td>{{tiquete.fechaCompra}}</td>
+            <td>{{tiquete.valor}}</td>
+            <td>
+              <button (click)="editarTiquete(tiquete)" class="btn btn-warning">Editar</button>
+              <button (click)="deleteTiquete(tiquete)" class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -17,4 +17,10 @@ export class AppComponent {
   Nuevo(){
     this.router.navigate(["add"]);
   }
+  ListarParques(){
+    this.router.navigate(["listarParques"]);
+  }
+  ListarTiquetes(){
+    this.router.navigate(["listarTiquetes"]);
+  }
 }
