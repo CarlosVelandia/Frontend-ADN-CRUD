@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ServiceService } from '../../Service/service.service';
-import { Tiquete } from '../../Modelo/tiquete';
+import { Tiquete } from 'src/app/Modelo/tiquete';
+import { ServiceService } from 'src/app/Service/service.service';
+
 
 
 @Component({
@@ -32,6 +33,7 @@ export class ListarTiqueteComponent implements OnInit {
   }
 
   deleteTiquete(tiquete:Tiquete){
+    alert(tiquete.id);
     this.service.deleteTiquete(tiquete)
     .subscribe(data=>{
       this.tiquetes=this.tiquetes.filter(p=>p!==tiquete);

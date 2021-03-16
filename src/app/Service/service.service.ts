@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Persona } from '../Modelo/Persona';
-import { Parque } from '../Modelo/Parque';
+import { Parque } from '../feature/parque/shared/model/Parque';
 import { Tiquete } from '../Modelo/tiquete';
 
 @Injectable()
@@ -13,59 +13,58 @@ export class ServiceService {
 
   constructor(private http:HttpClient) { }
 
-  UrlUsuarios='http://localhost:8084/tiquetes-parque-diversiones/usuarios';
-  UrlParques='http://localhost:8084/tiquetes-parque-diversiones/parques';
-  UrlTiquetes='http://localhost:8084/tiquetes-parque-diversiones/tiquetes';
+  Url='http://localhost:8084/tiquetes-parque-diversiones';
 
   getPersonas(){
-    return this.http.get<Persona[]>(this.UrlUsuarios);
+    return this.http.get<Persona[]>(this.Url+"/usuarios");
   }
   createPersona(persona:Persona){
-    return this.http.post<Persona>(this.UrlUsuarios,persona);
+    return this.http.post<Persona>(this.Url+"/usuarios",persona);
   }
   getPersonaId(id:number){
-    return this.http.get<Persona>(this.UrlUsuarios+"/"+id);
+    return this.http.get<Persona>(this.Url+"/usuarios/"+id);
   }
   updatePersona(persona:Persona){
-    return this.http.put<Persona>(this.UrlUsuarios+"/"+persona.id,persona);
+    return this.http.put<Persona>(this.Url+"/usuarios/"+persona.id,persona);
   }
   deletePersona(persona:Persona){
-    return this.http.delete<Persona>(this.UrlUsuarios+"/"+persona.id);
+    return this.http.delete<Persona>(this.Url+"/usuarios/"+persona.id);
   }
+
 
   ///Parque
 
   getParques(){
-    return this.http.get<Parque[]>(this.UrlParques);
+    return this.http.get<Parque[]>(this.Url+"/parques");
   }
   createParque(parque:Parque){
-    return this.http.post<Parque>(this.UrlParques,parque);
+    return this.http.post<Parque>(this.Url+"/parques",parque);
   }
   getParqueId(id:number){
-    return this.http.get<Parque>(this.UrlParques+"/"+id);
+    return this.http.get<Parque>(this.Url+"/parques/"+id);
   }
   updateParque(parque:Parque){
-    return this.http.put<Parque>(this.UrlParques+"/"+parque.id,parque);
+    return this.http.put<Parque>(this.Url+"/parques/"+parque.id,parque);
   }
   deleteParque(parque:Parque){
-    return this.http.delete<Parque>(this.UrlParques+"/"+parque.id);
+    return this.http.delete<Parque>(this.Url+"/parques/"+parque.id);
   }
 
   ///Tiquete
 
   getTiquetes(){
-    return this.http.get<Tiquete[]>(this.UrlTiquetes);
+    return this.http.get<Tiquete[]>(this.Url+"/tiquetes");
   }
   createTiquete(tiquete:Tiquete){
-    return this.http.post<Tiquete>(this.UrlTiquetes,tiquete);
+    return this.http.post<Tiquete>(this.Url+"/tiquetes",tiquete);
   }
   getTiqueteId(id:number){
-    return this.http.get<Tiquete>(this.UrlTiquetes+"/"+id);
+    return this.http.get<Tiquete>(this.Url+"/tiquetes/"+id);
   }
   updateTiquete(tiquete:Tiquete){
-    return this.http.put<Tiquete>(this.UrlTiquetes+"/"+tiquete.id,tiquete);
+    return this.http.put<Tiquete>(this.Url+"/tiquetes/"+tiquete.id,tiquete);
   }
   deleteTiquete(tiquete:Tiquete){
-    return this.http.delete<Tiquete>(this.UrlTiquetes+"/"+tiquete.id);
+    return this.http.delete<Tiquete>(this.Url+"/tiquetes/"+tiquete.id);
   }
 }

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ServiceService } from '../../Service/service.service';
-import { Parque } from '../../Modelo/Parque';
+import { Parque } from '../../shared/model/Parque';
+import { ParqueService } from '../../shared/service/parque.service';
+
 
 @Component({
   selector: 'app-editar-parque',
@@ -11,10 +12,10 @@ import { Parque } from '../../Modelo/Parque';
 export class EditarParqueComponent implements OnInit {
 
   parque:Parque=new Parque();
-  constructor(private router:Router,private service:ServiceService) { }
+  constructor(private router:Router,private service:ParqueService) { }
 
   ngOnInit() {
-    this.editarParque();
+    //this.editarParque();
   }
 
   editarParque(){
@@ -26,6 +27,7 @@ export class EditarParqueComponent implements OnInit {
 
   }
   actualizarParque(parque:Parque){
+    alert(parque.id);
     this.service.updateParque(parque)
     .subscribe(data=>{
       this.parque=data;

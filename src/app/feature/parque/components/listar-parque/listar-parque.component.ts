@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ServiceService } from '../../Service/service.service';
-import { Parque } from '../../Modelo/Parque';
-
+import { Parque } from '../../shared/model/Parque';
+import { ParqueService } from '../../shared/service/parque.service';
 
 @Component({
   selector: 'app-listar-parque',
@@ -12,7 +11,7 @@ import { Parque } from '../../Modelo/Parque';
 export class ListarParqueComponent implements OnInit {
 
   parques:Parque[];
-  constructor(private service: ServiceService, private router: Router) { }
+  constructor(private service: ParqueService, private router: Router) { }
 
   ngOnInit() {
     this.service.getParques()
@@ -26,7 +25,9 @@ export class ListarParqueComponent implements OnInit {
   }
   editarParque(parque:Parque){
     //localStorage.setItem("id",parque.id.toString());
+    alert(parque.id);
     this.service.parque = parque;
+    alert(parque.id);
     this.router.navigate(["editarParques"]);
   }
 

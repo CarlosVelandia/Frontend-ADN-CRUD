@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ServiceService } from '../../Service/service.service';
-import { Tiquete } from '../../Modelo/tiquete';
+import { Tiquete } from 'src/app/Modelo/tiquete';
+import { ServiceService } from 'src/app/Service/service.service';
+
 
 @Component({
   selector: 'app-crear-tiquete',
