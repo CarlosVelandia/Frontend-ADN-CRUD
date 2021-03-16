@@ -21,14 +21,13 @@ export class ListarParqueComponent implements OnInit {
   }
 
   nuevoParque(){
-    this.router.navigate(["crearParques"]);
+    this.router.navigate(["parques/crear"]);
   }
   editarParque(parque:Parque){
     //localStorage.setItem("id",parque.id.toString());
-    alert(parque.id);
+
     this.service.parque = parque;
-    alert(parque.id);
-    this.router.navigate(["editarParques"]);
+    this.router.navigate(["parques/editar"]);
   }
 
   deleteParque(parque:Parque){

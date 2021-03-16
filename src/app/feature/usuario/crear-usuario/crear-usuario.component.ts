@@ -1,26 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ServiceService } from 'src/app/Service/service.service';
-import { Persona } from 'src/app/Modelo/Persona';
+import { Usuario } from 'src/app/Modelo/Usuario';
 
 @Component({
   selector: 'app-add',
-  templateUrl: './add.component.html',
-  styleUrls: ['./add.component.css']
+  templateUrl: './crear-usuario.component.html',
+  styleUrls: ['./crear-usuario.component.css']
 })
-export class AddComponent implements OnInit {
+export class CrearUsuarioComponent implements OnInit {
 
-  persona:Persona=new Persona();
+  usuario:Usuario=new Usuario();
   constructor(private router:Router, private service:ServiceService) { }
 
   ngOnInit() {
   }
 
   Guardar(){
-    this.service.createPersona(this.persona)
+    this.service.createUsuario(this.usuario)
     .subscribe(data=>{
       alert("Se Agrego con Exito...!!!");
-      this.router.navigate(["listar"]);
+      this.router.navigate(["listarUsuario"]);
     })
   }
 

@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ListarComponent } from './feature/Persona/listar/listar.component';
-import { AddComponent } from './feature/Persona/add/add.component';
-import { EditComponent } from './feature/Persona/edit/edit.component';
+import { CrearUsuarioComponent } from './feature/usuario/crear-usuario/crear-usuario.component';
+import { EditarUsuarioComponent } from './feature/usuario/editar-usuario/editar-usuario.component';
+import { ListarUsuarioComponent } from './feature/usuario/listar-usuario/listar-usuario.component';
+
 
 
 
 const routes: Routes = [
-  {path:'listar', component:ListarComponent},
-  {path:'add',component:AddComponent},
-  {path:'edit',component:EditComponent},
-  {path: 'parques', loadChildren: () => import('@parque/parque.module').then(mod => mod.ParqueModule) }
+  {path:'listarUsuario', component:ListarUsuarioComponent},
+  {path:'crearUsuario',component:CrearUsuarioComponent},
+  {path:'editarUsuario',component:EditarUsuarioComponent},
+  {path: 'parques', loadChildren: () => import('@parque/parque.module').then(mod => mod.ParqueModule) },
+  {path: 'tiquetes', loadChildren: () => import('@tiquete/tiquete.module').then(mod => mod.TiqueteModule) }
 ];
 
 @NgModule({

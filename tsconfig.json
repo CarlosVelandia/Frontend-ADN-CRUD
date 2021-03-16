@@ -21,7 +21,15 @@
     "paths": {
       "@parque/*": [
       "src/app/feature/parque/*"
+    ],
+      "@tiquete/*": [
+      "src/app/feature/tiquete/*"
     ]
     }
+  },
+
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
   }
 }

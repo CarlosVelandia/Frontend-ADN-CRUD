@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Tiquete } from 'src/app/Modelo/tiquete';
-import { ServiceService } from 'src/app/Service/service.service';
+import { Tiquete } from 'src/app/feature/tiquete/shared/model/Tiquete';
+import { TiqueteService } from '../../shared/service/tiquete.service';
 
 
 @Component({
@@ -12,7 +12,7 @@ import { ServiceService } from 'src/app/Service/service.service';
 export class CrearTiqueteComponent implements OnInit {
 
   tiquete:Tiquete=new Tiquete();
-  constructor(private router:Router, private service:ServiceService) { }
+  constructor(private router:Router, private service:TiqueteService) { }
 
   ngOnInit() {
   }

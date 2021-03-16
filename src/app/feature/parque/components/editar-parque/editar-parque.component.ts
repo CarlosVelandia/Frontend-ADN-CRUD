@@ -11,8 +11,12 @@ import { ParqueService } from '../../shared/service/parque.service';
 })
 export class EditarParqueComponent implements OnInit {
 
-  parque:Parque=new Parque();
-  constructor(private router:Router,private service:ParqueService) { }
+  parque:Parque;
+
+  constructor(private router:Router,private service:ParqueService) {
+
+    this.parque=this.service.parque;
+  }
 
   ngOnInit() {
     //this.editarParque();

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Tiquete } from 'src/app/Modelo/tiquete';
-import { ServiceService } from 'src/app/Service/service.service';
+import { Tiquete } from 'src/app/feature/tiquete/shared/model/Tiquete';
+import { TiqueteService } from '../../shared/service/tiquete.service';
+
 
 
 
@@ -13,7 +14,7 @@ import { ServiceService } from 'src/app/Service/service.service';
 export class ListarTiqueteComponent implements OnInit {
 
   tiquetes:Tiquete[];
-  constructor(private service: ServiceService, private router: Router) { }
+  constructor(private service: TiqueteService, private router: Router) { }
 
   ngOnInit() {
     this.service.getTiquetes()
@@ -23,13 +24,13 @@ export class ListarTiqueteComponent implements OnInit {
   }
 
   nuevoTiquete(){
-    this.router.navigate(["crearTiquetes"]);
+    this.router.navigate(["tiquetes/crear"]);
   }
 
   editarTiquete(tiquete:Tiquete){
     //localStorage.setItem("id",tiquete.id.toString());
     this.service.tiquete = tiquete;
-    this.router.navigate(["editarTiquetes"]);
+    this.router.navigate(["tiquetes/editar"]);
   }
 
   deleteTiquete(tiquete:Tiquete){

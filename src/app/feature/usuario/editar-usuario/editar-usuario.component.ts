@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ServiceService } from 'src/app/Service/service.service';
-import { Persona } from 'src/app/Modelo/Persona';
+import { Usuario } from 'src/app/Modelo/Usuario';
 
 @Component({
   selector: 'app-edit',
-  templateUrl: './edit.component.html',
-  styleUrls: ['./edit.component.css']
+  templateUrl: './editar-usuario.component.html',
+  styleUrls: ['./editar-usuario.component.css']
 })
-export class EditComponent implements OnInit {
+export class EditarUsuarioComponent implements OnInit {
 
-  persona :Persona=new Persona();
+  usuario :Usuario=new Usuario();
   constructor(private router:Router,private service:ServiceService) { }
 
   ngOnInit() {
@@ -19,18 +19,18 @@ export class EditComponent implements OnInit {
 
   Editar(){
     let id=localStorage.getItem("id");
-    this.service.getPersonaId(+id)
+    this.service.getUsuarioId(+id)
     .subscribe(data=>{
-      this.persona=data;
+      this.usuario=data;
     })
 
   }
-  Actualizar(persona:Persona){
-    this.service.updatePersona(persona)
+  Actualizar(usuario:Usuario){
+    this.service.updateUsuario(usuario)
     .subscribe(data=>{
-      this.persona=data;
+      this.usuario=data;
       alert("Se Actualizo con Exito...!!!");
-      this.router.navigate(["listar"]);
+      this.router.navigate(["listarUsuario"]);
     })
   }
 
