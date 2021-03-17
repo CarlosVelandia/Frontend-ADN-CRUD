@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ServiceService } from '../../../Service/service.service';
-import { Usuario } from 'src/app/Modelo/Usuario';
+import { Usuario } from 'src/app/feature/usuario/shared/model/Usuario';
+import { UsuarioService } from '../../shared/service/usuario.service';
 
 @Component({
   selector: 'app-listar',
@@ -11,7 +11,7 @@ import { Usuario } from 'src/app/Modelo/Usuario';
 export class ListarUsuarioComponent implements OnInit {
 
   usuarios: Usuario[];
-  constructor(private service: ServiceService, private router: Router) { }
+  constructor(private service: UsuarioService, private router: Router) { }
 
   ngOnInit() {
     this.service.getUsuarios()
@@ -20,16 +20,16 @@ export class ListarUsuarioComponent implements OnInit {
       });
   }
 
-  Nuevo(){
-    this.router.navigate(["crearUsuario"]);
+  crearUsuario(){
+    this.router.navigate(["usuarios/crear"]);
   }
-  Editar(usuario:Usuario){
+  editarUsuario(usuario:Usuario){
     //localStorage.setItem("id",usuario.id.toString());
     this.service.usuario = usuario;
-    this.router.navigate(["editarUsuario"]);
+    this.router.navigate(["usuarios/editar"]);
   }
 
-  Delete(usuario:Usuario){
+  deleteUsuario(usuario:Usuario){
     this.service.deleteUsuario(usuario)
     .subscribe(data=>{
       this.usuarios=this.usuarios.filter(p=>p!==usuario);

@@ -24,7 +24,10 @@
     ],
       "@tiquete/*": [
       "src/app/feature/tiquete/*"
-    ]
+    ],
+      "@usuario/*": [
+      "src/app/feature/usuario/*"
+    ],
     }
   },
 

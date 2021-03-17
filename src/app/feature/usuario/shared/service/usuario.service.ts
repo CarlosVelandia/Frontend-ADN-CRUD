@@ -1,14 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Usuario } from '../Modelo/Usuario';
-import { Tiquete } from '../feature/tiquete/shared/model/Tiquete';
+import { Usuario } from '../model/Usuario';
+import { Tiquete } from '../../../tiquete/shared/model/Tiquete';
 
 @Injectable()
-export class ServiceService {
+export class UsuarioService {
 
   usuario: Usuario;
-
-  tiquete: Tiquete;
 
   constructor(private http:HttpClient) { }
 

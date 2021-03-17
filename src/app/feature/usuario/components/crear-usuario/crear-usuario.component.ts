@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ServiceService } from 'src/app/Service/service.service';
-import { Usuario } from 'src/app/Modelo/Usuario';
+import { Usuario } from 'src/app/feature/usuario/shared/model/Usuario';
+import { UsuarioService } from '../../shared/service/usuario.service';
 
 @Component({
   selector: 'app-add',
@@ -11,7 +11,7 @@ import { Usuario } from 'src/app/Modelo/Usuario';
 export class CrearUsuarioComponent implements OnInit {
 
   usuario:Usuario=new Usuario();
-  constructor(private router:Router, private service:ServiceService) { }
+  constructor(private router:Router, private service:UsuarioService) { }
 
   ngOnInit() {
   }
@@ -20,7 +20,7 @@ export class CrearUsuarioComponent implements OnInit {
     this.service.createUsuario(this.usuario)
     .subscribe(data=>{
       alert("Se Agrego con Exito...!!!");
-      this.router.navigate(["listarUsuario"]);
+      this.router.navigate(["usuarios"]);
     })
   }
 

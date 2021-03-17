@@ -19,9 +19,6 @@ export class TiqueteService {
   createTiquete(tiquete:Tiquete){
     return this.http.post<Tiquete>(this.Url+"/tiquetes",tiquete);
   }
-  getTiqueteId(id:number){
-    return this.http.get<Tiquete>(this.Url+"/tiquetes/"+id);
-  }
   updateTiquete(tiquete:Tiquete){
     return this.http.put<Tiquete>(this.Url+"/tiquetes/"+tiquete.id,tiquete);
   }

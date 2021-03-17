@@ -19,9 +19,6 @@ export class ParqueService {
   createParque(parque:Parque){
     return this.http.post<Parque>(this.Url+"/parques",parque);
   }
-  getParqueId(id:number){
-    return this.http.get<Parque>(this.Url+"/parques/"+id);
-  }
   updateParque(parque:Parque){
     return this.http.put<Parque>(this.Url+"/parques/"+parque.id,parque);
   }

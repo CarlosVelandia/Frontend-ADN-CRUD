@@ -13,8 +13,8 @@
         <thead>
           <tr class="text-center">
             <th>ID</th>
-            <th>ID USUARIO</th>
-            <th>ID PARQUE</th>
+            <th>USUARIO</th>
+            <th>PARQUE</th>
             <th>FECHA COMPRA</th>
             <th>VALOR</th>
           </tr>
@@ -22,8 +22,8 @@
         <tbody>
           <tr *ngFor="let tiquete of tiquetes" class="text-center">
             <td>{{tiquete.id}}</td>
-            <td>{{tiquete.idUsuario.id}}</td>
-            <td>{{tiquete.idParque.id}}</td>
+            <td>{{tiquete.idUsuario.nombre}}</td>
+            <td>{{tiquete.idParque.nombre}}</td>
             <td>{{tiquete.fechaCompra}}</td>
             <td>{{tiquete.valor}}</td>
             <td>

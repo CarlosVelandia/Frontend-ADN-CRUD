@@ -19,24 +19,16 @@ export class EditarParqueComponent implements OnInit {
   }
 
   ngOnInit() {
-    //this.editarParque();
-  }
-
-  editarParque(){
-    let id=localStorage.getItem("id");
-    this.service.getParqueId(+id)
-    .subscribe(data=>{
-      this.parque=data;
-    })
 
   }
+
   actualizarParque(parque:Parque){
     alert(parque.id);
     this.service.updateParque(parque)
     .subscribe(data=>{
       this.parque=data;
       alert("Se Actualizo con Exito...!!!");
-      this.router.navigate(["listar"]);
+      this.router.navigate(["parques"]);
     })
   }
 

@@ -20,7 +20,7 @@ export class CrearParqueComponent implements OnInit {
     this.service.createParque(this.parque)
     .subscribe(data=>{
       alert("Se Creo con Exito...!!!");
-      this.router.navigate(["listarParques"]);
+      this.router.navigate(["parques"]);
     })
   }
 

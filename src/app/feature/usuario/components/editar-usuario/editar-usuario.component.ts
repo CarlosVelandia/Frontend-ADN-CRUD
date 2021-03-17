@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ServiceService } from 'src/app/Service/service.service';
-import { Usuario } from 'src/app/Modelo/Usuario';
+
+import { Usuario } from 'src/app/feature/usuario/shared/model/Usuario';
+import { UsuarioService } from '../../shared/service/usuario.service';
 
 @Component({
   selector: 'app-edit',
@@ -11,26 +12,21 @@ import { Usuario } from 'src/app/Modelo/Usuario';
 export class EditarUsuarioComponent implements OnInit {
 
   usuario :Usuario=new Usuario();
-  constructor(private router:Router,private service:ServiceService) { }
+  constructor(private router:Router,private service:UsuarioService) {
+
+    this.usuario=this.service.usuario;
+   }
 
   ngOnInit() {
-    this.Editar();
-  }
-
-  Editar(){
-    let id=localStorage.getItem("id");
-    this.service.getUsuarioId(+id)
-    .subscribe(data=>{
-      this.usuario=data;
-    })
 
   }
-  Actualizar(usuario:Usuario){
+
+  actualizarUsuario(usuario:Usuario){
     this.service.updateUsuario(usuario)
     .subscribe(data=>{
       this.usuario=data;
       alert("Se Actualizo con Exito...!!!");
-      this.router.navigate(["listarUsuario"]);
+      this.router.navigate(["usuarios"]);
     })
   }
 
