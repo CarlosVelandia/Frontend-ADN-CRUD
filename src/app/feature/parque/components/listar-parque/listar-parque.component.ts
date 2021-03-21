@@ -23,9 +23,8 @@ export class ListarParqueComponent implements OnInit {
   nuevoParque(){
     this.router.navigate(["parques/crear"]);
   }
-  editarParque(parque:Parque){
-    //localStorage.setItem("id",parque.id.toString());
 
+  editarParque(parque:Parque){
     this.service.parque = parque;
     this.router.navigate(["parques/editar"]);
   }

@@ -24,7 +24,6 @@ export class ListarUsuarioComponent implements OnInit {
     this.router.navigate(["usuarios/crear"]);
   }
   editarUsuario(usuario:Usuario){
-    //localStorage.setItem("id",usuario.id.toString());
     this.service.usuario = usuario;
     this.router.navigate(["usuarios/editar"]);
   }

@@ -23,7 +23,6 @@ export class EditarParqueComponent implements OnInit {
   }
 
   actualizarParque(parque:Parque){
-    alert(parque.id);
     this.service.updateParque(parque)
     .subscribe(data=>{
       this.parque=data;
