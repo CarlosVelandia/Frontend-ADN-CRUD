@@ -4,7 +4,7 @@
       <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
           <h5>Tiquetes</h5>
-          <button (click)="nuevoTiquete()" class="btn btn-primary btn-sm">Crear Tiquete</button>
+          <button (click)="nuevoTiquete()" class="btn btn-primary btn-sm" id="botonCrearTiquete">Crear Tiquete</button>
         </div>
       </div>
     </div>
@@ -27,8 +27,8 @@
             <td>{{tiquete.fechaCompra}}</td>
             <td>{{tiquete.valor}}</td>
             <td>
-              <button (click)="editarTiquete(tiquete)" class="btn btn-warning">Editar</button>
-              <button (click)="deleteTiquete(tiquete)" class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+              <button (click)="editarTiquete(tiquete)" class="btn btn-warning" id="botonEditarTiquete">Editar</button>
+              <button (click)="deleteTiquete(tiquete)" class="btn btn-danger" id="botonEliminarTiquete" style="margin-left: 10px;">Delete</button>
             </td>
           </tr>
         </tbody>

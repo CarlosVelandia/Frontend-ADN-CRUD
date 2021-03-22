@@ -7,13 +7,13 @@
       <form action="">
         <div class="form-group">
           <label for="">Nombre:</label>
-          <input [(ngModel)]="usuario.nombre" name="nombre" type="text" class="form-control">
+          <input [(ngModel)]="usuario.nombre" name="nombre" type="text" class="form-control" id="nombreUsuario">
         </div>
         <div class="form-group">
           <label for="">Cedula:</label>
-          <input [(ngModel)]="usuario.cedula" name="cedula" type="text" class="form-control">
+          <input [(ngModel)]="usuario.cedula" name="cedula" type="text" class="form-control" id="cedula">
         </div>
-        <button (click)="Guardar()" class="btn btn-danger">Crear</button>
+        <button (click)="Guardar()" class="btn btn-danger" id="guardarUsuario">Crear</button>
       </form>
     </div>
   </div>

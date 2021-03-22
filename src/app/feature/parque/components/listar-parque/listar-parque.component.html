@@ -3,8 +3,8 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
-          <h3>Parques</h3>
-          <button (click)="nuevoParque()" class="btn btn-primary btn-sm">Crear Parque</button>
+          <h5>Parques</h5>
+          <button (click)="nuevoParque()" class="btn btn-primary btn-sm" id="botonCrearParque">Crear Parque</button>
         </div>
       </div>
     </div>
@@ -20,15 +20,15 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let parque of parques" class="text-center">
+          <tr *ngFor="let parque of parques" class="text-center" id="tablaParques">
             <td>{{parque.id}}</td>
             <td>{{parque.nombre}}</td>
             <td>{{parque.codigo}}</td>
             <td>{{parque.direccion}}</td>
             <td>{{parque.telefono}}</td>
             <td>
-              <button (click)="editarParque(parque)" class="btn btn-warning">Editar</button>
-              <button (click)="deleteParque(parque)" class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+              <button (click)="editarParque(parque)" class="btn btn-warning" id="botonEditarParque">Editar</button>
+              <button (click)="deleteParque(parque)" class="btn btn-danger" id="botonEliminarParque" style="margin-left: 10px;">Delete</button>
             </td>
           </tr>
         </tbody>
