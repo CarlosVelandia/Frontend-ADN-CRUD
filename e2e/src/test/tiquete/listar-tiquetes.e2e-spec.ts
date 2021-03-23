@@ -2,7 +2,7 @@ import { ListarParques } from "e2e/src/page/parque/listar-parques.po";
 import { browser } from "protractor";
 import { AppPage } from "../../app.po";
 
-describe("Listar parques", () => {
+describe("Listar tiquetes", () => {
   let page: AppPage;
   let listarParques: ListarParques;
 
@@ -11,7 +11,7 @@ describe("Listar parques", () => {
     listarParques = new ListarParques();
   });
 
-  it("Deberia listar parques", () => {
+  it("Deberia listar tiquetes", () => {
     //arrange
     page.navigateTo();
     //act
