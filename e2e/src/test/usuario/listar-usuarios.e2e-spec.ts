@@ -1,6 +1,8 @@
-import { ListarUsuarios } from "e2e/src/page/usuario/listar-usuarios.po";
 import { browser } from "protractor";
 import { AppPage } from "../../app.po";
+import { ListarUsuarios } from "e2e/src/page/usuario/listar-usuarios.po";
+
+
 
 describe("Listar usuarios", () => {
   let page: AppPage;
@@ -15,7 +17,8 @@ describe("Listar usuarios", () => {
     //arrange
     page.navigateTo();
     //act
-    browser.sleep(300);
+    page.clickBotonUsuarios();
+    browser.sleep(500);
     //assert
     expect(2).toBe(listarUsuarios.contarUsuarios());
     browser.sleep(500);

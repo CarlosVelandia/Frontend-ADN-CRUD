@@ -1,67 +1,71 @@
+import { EditarUsuario } from "e2e/src/page/usuario/editar-usuario.po";
 import { browser } from "protractor";
 import { AppPage } from "../../app.po";
-import { CrearUsuario } from "../../page/usuario/crear-usuario.po";
 import { ListarUsuarios } from "../../page/usuario/listar-usuarios.po";
 
 describe("Crear Usuario", () => {
   let page: AppPage;
   let listarUsuarios: ListarUsuarios;
-  let crearUsuario: CrearUsuario;
-  const NOMBRE = 'test';
-  const CEDULA = '123456';
+  let editarUsuario: EditarUsuario
+  const NOMBRE = 'test usuario';
+  const CEDULA = '78901';
   const USUARIO_CREADO = "El usuario ha sido creado";
   const USUARIO_YA_EXISTE = "El usuario ya existe en el sistema";
 
 
   beforeEach(() => {
     page = new AppPage();
-    crearUsuario = new CrearUsuario();
+    editarUsuario = new EditarUsuario();
     listarUsuarios = new ListarUsuarios();
   });
 
-  it("Debe crear el Usuario", () => {
+  it("Debe editar el Usuario", () => {
   //arrange
     page.navigateTo();
     browser.sleep(500);
     page.clickBotonUsuarios
     browser.sleep(500);
-    listarUsuarios.clickBotonCrearUsuario();
+    listarUsuarios.clickBotonEditarUsuario();
     browser.sleep(500);
-    crearUsuario.clickInputNombre();
-    crearUsuario.setInputNombre(NOMBRE);
+    editarUsuario.clickInputNombre();
+    editarUsuario.limpiarInputNombre();
+    editarUsuario.setInputNombre(NOMBRE);
     browser.sleep(500);
-    crearUsuario.clickInputCedula();
-    crearUsuario.setInputCedula(CEDULA);
+    editarUsuario.clickInputCedula();
+    editarUsuario.limpiarInputCedula();
+    editarUsuario.setInputCedula(CEDULA);
     browser.sleep(500);
 
     //act
-    crearUsuario.clickBotonGuardarUsuario();
+    editarUsuario.clickBotonActualizarUsuario();
 
     //assert
-    const alerta = "El usuario ha sido creado";
+    const alerta = "El usuario ha sido editado";
     expect(alerta).toEqual(USUARIO_CREADO);
-    browser.sleep(500);
+    browser.sleep(300);
   });
 
   it("Debe retornar un error que usuario ya existe ", () => {
     //arrange
       page.navigateTo();
-      listarUsuarios.clickBotonCrearUsuario();
+      listarUsuarios.clickBotonEditarUsuario();
       browser.sleep(500);
-      crearUsuario.clickInputNombre();
-      crearUsuario.setInputNombre(NOMBRE);
+      editarUsuario.clickInputNombre();
+      editarUsuario.limpiarInputNombre();
+      editarUsuario.setInputNombre(NOMBRE);
       browser.sleep(500);
-      crearUsuario.clickInputCedula();
-      crearUsuario.setInputCedula(CEDULA);
+      editarUsuario.clickInputCedula();
+      editarUsuario.limpiarInputCedula();
+      editarUsuario.setInputCedula(CEDULA);
       browser.sleep(500);
 
       //act
-      crearUsuario.clickBotonGuardarUsuario();
+      editarUsuario.clickBotonActualizarUsuario();
 
       //assert
       const alerta = "El usuario ya existe";
       expect(alerta).toEqual(USUARIO_YA_EXISTE);
-      browser.sleep(500);
+      browser.sleep(300);
     });
 
 });

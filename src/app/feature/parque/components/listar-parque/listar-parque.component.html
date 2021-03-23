@@ -27,8 +27,8 @@
             <td>{{parque.direccion}}</td>
             <td>{{parque.telefono}}</td>
             <td>
-              <button (click)="editarParque(parque)" class="btn btn-warning" id="botonEditarParque">Editar</button>
-              <button (click)="deleteParque(parque)" class="btn btn-danger" id="botonEliminarParque" style="margin-left: 10px;">Delete</button>
+              <button (click)="editarParque(parque)" class="btn btn-warning" [id]="'botonEditarParque'+ parque.id">Editar</button>
+              <button (click)="deleteParque(parque)" class="btn btn-danger" [id]="'botonEliminarParque'+ parque.id" style="margin-left: 10px;">Delete</button>
             </td>
           </tr>
         </tbody>

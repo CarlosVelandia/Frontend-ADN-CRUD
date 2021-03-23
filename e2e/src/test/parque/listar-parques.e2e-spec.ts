@@ -9,13 +9,16 @@ describe("Listar parques", () => {
   beforeEach(() => {
     page = new AppPage();
     listarParques = new ListarParques();
+
   });
 
   it("Deberia listar parques", () => {
     //arrange
     page.navigateTo();
+    browser.sleep(500);
     //act
-    browser.sleep(300);
+    page.clickBotonParques();
+    browser.sleep(500);
     //assert
     expect(2).toBe(listarParques.contarParques());
     browser.sleep(500);

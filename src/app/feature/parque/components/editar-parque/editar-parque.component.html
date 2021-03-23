@@ -7,21 +7,21 @@
       <form action="">
         <div class="form-group">
           <label for="">Nombre:</label>
-          <input [(ngModel)]="parque.nombre" name="nombre" type="text" class="form-control">
+          <input [(ngModel)]="parque.nombre" name="nombre" type="text" class="form-control" id="nombreParque">
         </div>
         <div class="form-group">
           <label for="">Codigo:</label>
-          <input [(ngModel)]="parque.codigo" name="codigo" type="text" class="form-control">
+          <input [(ngModel)]="parque.codigo" name="codigo" type="text" class="form-control" id="codigo">
         </div>
         <div class="form-group">
           <label for="">Direccion:</label>
-          <input [(ngModel)]="parque.direccion" name="direccion" type="text" class="form-control">
+          <input [(ngModel)]="parque.direccion" name="direccion" type="text" class="form-control" id="direccion">
         </div>
         <div class="form-group">
           <label for="">Telefono:</label>
-          <input [(ngModel)]="parque.telefono" name="telefono" type="text" class="form-control">
+          <input [(ngModel)]="parque.telefono" name="telefono" type="text" class="form-control" id="telefono">
         </div>
-        <button (click)="actualizarParque(parque)" class="btn btn-danger">Actualizar</button>
+        <button (click)="actualizarParque(parque)" class="btn btn-danger" id="actualizarParque">Actualizar</button>
       </form>
     </div>
   </div>
